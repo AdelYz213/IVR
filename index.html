@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ivory Rentline | Elite Car Rental</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Montserrat', 'sans-serif'],
+              serif: ['Cinzel', 'serif'],
+            },
+            colors: {
+              ivory: {
+                50: '#fffff0',
+                100: '#fefce8',
+                200: '#fef9c3',
+                400: '#facc15', // Gold accent
+                500: '#eab308',
+                600: '#ca8a04',
+              },
+              zinc: {
+                850: '#1f1f22',
+                950: '#09090b', // Deep black
+              }
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'modal-slide': 'modalSlide 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              modalSlide: {
+                '0%': { opacity: '0', transform: 'scale(0.95) translateY(20px)' },
+                '100%': { opacity: '1', transform: 'scale(1) translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #050505; /* Darker than zinc-950 */
+        color: #f4f4f5;
+        overflow-x: hidden;
+      }
+      
+      /* Glassmorphism Utilities */
+      .glass {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      
+      .glass-strong {
+         background: rgba(10, 10, 10, 0.85);
+         backdrop-filter: blur(20px);
+         -webkit-backdrop-filter: blur(20px);
+         border-left: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .glass-card:hover {
+        background: rgba(255, 255, 255, 0.07);
+        border-color: rgba(234, 179, 8, 0.3);
+        box-shadow: 0 0 30px rgba(234, 179, 8, 0.1);
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #000; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333; 
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #ca8a04; 
+      }
+
+      /* Animation Utility Classes */
+      .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+      }
+      .reveal-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.32.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
